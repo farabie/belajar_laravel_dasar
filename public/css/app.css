@@ -1,0 +1,26 @@
+body{
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar li a {
+    padding: 10px;
+    display: inline-block;
+}

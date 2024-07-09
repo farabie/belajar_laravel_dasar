@@ -15,13 +15,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', fn() => view('home'));
-
+Route::view('contact', 'contact');
+Route::view('about', 'about');
+Route::view('posts/first-post', 'posts.show');
 Route::get('/profile', function() {
     $fullName = 'Farabie';
     return view('profile', [
         'name' => $fullName,
     ]);
 });
+
+// Route::get('/contact', function() {
+//     return view('contact');
+// });
 
 // Route::get('/test', function () {
 //     //Berarti ini artinya folder yang ada views kemudian arahkan ke home_screen
