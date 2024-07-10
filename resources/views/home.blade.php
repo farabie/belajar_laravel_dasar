@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
-    <!--- Untuk menampilkan layouts!--->
-    @include('layouts.navbar')
-    <script src="{{asset('js/app.js')}}"></script>
-</body>
-</html>
+@extends('layouts.app', ['title' => 'Home'])
+
+{{-- Contoh Penggunaan Section dengan Menggunakan HTML --}}
+
+@section('content')
+
+<h3>Home Page</h3>
+<p>Ini adalah Home Page</p>
+
+@endsection
+
+{{-- Contoh Penggunaan Section dengan langsung memasukan contentnya --}}
+{{-- @section('content', 'Home Page') --}}
