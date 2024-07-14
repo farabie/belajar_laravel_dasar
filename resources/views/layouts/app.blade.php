@@ -13,7 +13,9 @@
 </head>
 <body>
     <!--- Untuk menampilkan layouts!--->
-    @include('layouts.navbar')
+    <x-navbar>
+        
+    </x-navbar>
     <script src="{{asset('js/app.js')}}"></script>
     @yield('content')
 </body>
