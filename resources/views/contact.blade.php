@@ -1,10 +1,3 @@
-@extends('layouts.app', ['title' => 'Contact'])
-
-@section('title', 'Contact')
-
-@section('content')
-
-<h3>Contact</h3>
-<p>Ini adalah contact page</p>
-
-@endsection
+<x-app-layout title="Contact Page">
+    <h1>Contact Page</h1>
+</x-app-layout>

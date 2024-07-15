@@ -4,16 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Navbar extends Component
+class AppLayout extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+
+    public $title;
+    public function __construct($title = null)
     {
-        //
+       $this->title = $title ?? 'Wild-bie';
     }
 
     /**
@@ -23,13 +25,6 @@ class Navbar extends Component
      */
     public function render()
     {
-        $navbar = [
-            // Nama => URL
-            'Home' => '/',
-            'Contact' => '/contact',
-            'About' => '/about',
-            'Profile' => '/profile',
-        ];
-        return view('layouts.navbar', compact('navbar'));
+        return view('layouts.app', [ 'title' => 'abc']);
     }
 }

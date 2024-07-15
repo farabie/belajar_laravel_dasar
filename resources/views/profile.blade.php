@@ -1,11 +1,3 @@
-@extends('layouts.app', ['title' => 'Profile'])
-
-
-@section('title', 'Home')
-
-@section('content')
-
-<h4>Profile Page</h4>
-<p>Ini adalah profile page</p>
-
-@endsection
+<x-app-layout title="Profile">
+    <h1>Profile Page</h1>
+</x-app-layout>

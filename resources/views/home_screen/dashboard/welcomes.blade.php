@@ -1,3 +1,0 @@
-<div>
-    Testing Saja
-</div>

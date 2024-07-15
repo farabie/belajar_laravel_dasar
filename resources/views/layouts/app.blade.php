@@ -13,10 +13,9 @@
 </head>
 <body>
     <!--- Untuk menampilkan layouts!--->
-    <x-navbar>
-        
-    </x-navbar>
+    <x-navbar></x-navbar>
+    {{$slot}}
     <script src="{{asset('js/app.js')}}"></script>
-    @yield('content')
+    {{-- @yield('content') --}}
 </body>
 </html>
