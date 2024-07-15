@@ -9,7 +9,16 @@
 
     {{-- Atau yang kedua menggunakan seperti yang dibawah --}}
     <title>{{$title}} | Laravel 8</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+
+    {{$styles}}
+    {{-- @if (isset($styles))
+        {{$styles}}
+    @endif --}}
+
+    {{-- @isset($styles)
+        {{$styles}}
+    @endisset --}}
 </head>
 <body>
     <!--- Untuk menampilkan layouts!--->
