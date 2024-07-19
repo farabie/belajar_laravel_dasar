@@ -55,4 +55,23 @@ Route::get('profile/{username}/{postingan}', function($username, $postingan) {
 Kita bisa membuat lebih dari satu wildcard dengan cara menambahkan wildcard nya dengan /
 kemudian deklarasikan di dalam array sesudah $name
 
+14. Passing Request Data Menggunakan Controller
+A. Untuk tahap pertama kita bisa membuat controllernya dengan make:controller ProfileInformationController
+B. Kemudian buat route nya di folder routes/web.php
+Kita menggunakan __invoke karena kita asumsikan hanya ada satu function saja
+Route::get('profile/{identifier}', [ProfileInformationController::class, '__invoke']);
+C. Kemudian pada controller kita masukan function __invoke
+
+public function __invoke(Request $request, $identifier) {
+    return view('profile', [
+        'username' => $identifier,
+        'role_id' => $request->role_id
+    ]);
+}
+
+Untuk cara pemanggilannya jika kita menggunakan $identifier maka bisa seperti dibawah ini
+http://127.0.0.1:8000/profile/farabie
+
+atau jika kita inggin menambahka role_id sebagai parameter maka bisa seperti ini
+http://127.0.0.1:8000/profile/farabie?role_id=karyawan
 -- }}

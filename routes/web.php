@@ -4,14 +4,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
+// use App\Http\Controllers\ProfileInformationController;
 
 //Yang dimana ini artinya menggunakan HomeController dengan function index
 // Route::get('/', [HomeController::class, 'index']);
 
 //Atau bisa menggunakan cara singkat yaitu dengan cara
+Route::get('profile/{identifier}', [ProfileInformationController::class, '__invoke']);
 Route::get('/', HomeController::class);
 Route::get('contact', [ContactController::class, 'create']);
 Route::post('contact', [ContactController::class, 'store']);
+
 
 // Jika menggunakan php versi 7 untuk function bisa disingkat menjadi fn ()
 // Route::get('/', fn() => view('home'));
