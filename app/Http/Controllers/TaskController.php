@@ -18,7 +18,20 @@ class TaskController extends Controller
         //Atau kita bisa persingkat seperti ini
 
         return view('tasks.index', [
-            'tasks' => DB::table('tasks')->get(),
+            // 'tasks' => DB::table('tasks')->get(),
+            'tasks' => DB::table('tasks')->orderBy('id', 'desc')->get(),
         ]);
+    }
+
+    public function store (Request $request) {
+        DB::table('tasks')->insert(
+            [
+                'list' => $request->list        
+            ]
+        );
+
+        // return redirect('tasks');
+        // return redirect()->back();
+        return back();
     }
 }

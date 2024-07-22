@@ -15,6 +15,8 @@ Route::get('profile/{identifier}', ProfileInformationController::class);
 Route::get('/', HomeController::class);
 
 Route::get('tasks', [TaskController::class, 'index']);
+Route::post('tasks', [TaskController::class, 'store']);
+// Route::get('tasks/create', [TaskController::class, 'create']);
 
 Route::get('contact', [ContactController::class, 'create']);
 Route::post('contact', [ContactController::class, 'store']);
