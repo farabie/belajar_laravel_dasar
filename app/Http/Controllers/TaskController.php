@@ -34,4 +34,16 @@ class TaskController extends Controller
         // return redirect()->back();
         return back();
     }
+
+
+    public function edit($id) {
+        $task = DB::table('tasks')->where('id', $id)->first();
+
+        return view('tasks.edit', ['task' => $task]);
+    }
+
+    public function update(Request $request, $id) {
+        DB::table('tasks')->where('id', $id)->update(['list' => $request->list]);
+        return redirect('tasks');
+    }
 }

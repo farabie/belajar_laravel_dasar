@@ -8,7 +8,7 @@
     </form>
     <ul style="list-style-type: none">
         @foreach($tasks as $index => $task)
-            <li>{{$index + 1}} - {{$task->list}}</li>
+            <li>{{$index + 1}} - {{$task->list}} - <a style="color:red" href="/tasks/{{ $task->id }}/edit">Edit</a></li>
         @endforeach
     </ul>
 </x-app-layout>

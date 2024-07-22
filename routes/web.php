@@ -16,6 +16,10 @@ Route::get('/', HomeController::class);
 
 Route::get('tasks', [TaskController::class, 'index']);
 Route::post('tasks', [TaskController::class, 'store']);
+
+//Route Untuk Edit
+Route::get('tasks/{id}/edit', [TaskController::class, 'edit']);
+Route::put('tasks/{id}', [TaskController::class, 'update']);
 // Route::get('tasks/create', [TaskController::class, 'create']);
 
 Route::get('contact', [ContactController::class, 'create']);
