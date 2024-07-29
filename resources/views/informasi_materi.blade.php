@@ -75,3 +75,23 @@ http://127.0.0.1:8000/profile/farabie
 atau jika kita inggin menambahka role_id sebagai parameter maka bisa seperti ini
 http://127.0.0.1:8000/profile/farabie?role_id=karyawan
 -- }}
+
+21. Kita bisa menggunakan tinker untuk mengetest model kita secara manual
+cukup dengan php artisan tinker sebagai contoh kita ingin mengetahui melalui model untuk id yang pertama cukup dengan
+App\Models\Task::where('id', 1)->first()
+
+atau bisa juga dengan 
+App\Models\Task::find(5)
+
+Jika ingin menampilkan data dari akhir hingga ke awal cukup dengan
+App\Models\Task::latest()->get()
+
+//Atau jika ingin menampilkan kolom dari kolom mark sama list saja
+App\Models\Task::latest->get(['mark', 'list']);
+
+//Atau kita bisa juga menampilkan mark dengan kondis 0 saya ingin menampilkan semua nya dalam bentuk list
+bis menggunakan pluck
+
+$checked = App\Models\Task::where('mark', 0)->get()->pluck('list')
+//Atau bisa juga menggunakan camal case di where
+$uncheked = App\Models\Task::whereMark(0)->get()->pluck('list')
